@@ -35,10 +35,10 @@ const defaultMenu = {
 
 𝗟𝗜𝗦𝗧𝗔 𝗗𝗘 𝗠𝗘𝗡𝗨𝗦
 `.trimStart(),
-  header: '%category',
-  body: '%cmd %isdiamond %isPremium',
-  footer: '\n',
-  after: `
+ header: '╭┅═┅═〔 %category 〕━═┅═━\n┃╭━═┅═━━═┅═━═',
+ body: '┃┃  %cmd',
+ footer: '┃╰━═┅═━━═┅═━═\n╰━═┅═━━═┅═━━═┅═━\n',
+ after: `
 `,
 }
 let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
@@ -166,4 +166,4 @@ function clockString(ms) {
   let m = isNaN(ms) ? '--' : Math.floor(ms / 60000) % 60
   let s = isNaN(ms) ? '--' : Math.floor(ms / 1000) % 60
   return [d, 'd ', h, 'h ', m, 'm '].map(v => v.toString().padStart(2, 0)).join('')
-}
+      }
