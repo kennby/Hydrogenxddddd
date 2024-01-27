@@ -521,8 +521,8 @@ export async function participantsUpdate({ id, participants, action }) {
             if (chat.welcome) {
                 let groupMetadata = await this.groupMetadata(id) || (conn.chats[id] || {}).metadata
                 for (let user of participants) {
-                    let pp = 'https://i.imgur.com/nHHUm1a.png'
-                    let bg = 'https://cdn.discordapp.com/attachments/850808002545319957/859359637106065408/bg.png'
+                    let pp = 'https://telegra.ph/file/c675a91bf2aeed67d47d9.jpg'
+                    let bg = 'https://telegra.ph/file/c675a91bf2aeed67d47d9.jpg'
 
                     try {
                         pp = await this.profilePictureUrl(user, 'image')
@@ -532,7 +532,7 @@ export async function participantsUpdate({ id, participants, action }) {
 
                             let wel = API(`https://api.popcat.xyz`, '/welcomecard', {
                                 background: bg,
-                                text1: "WELCOME",
+                                text1: "bienvenido",
                                 text2: +groupMetadata.participants.length,
                                 text3: " ",
                                 avatar: pp,
@@ -540,7 +540,7 @@ export async function participantsUpdate({ id, participants, action }) {
 
                             let lea = API(`https://api.popcat.xyz`, '/welcomecard', {
                                 background: bg,
-                                text1: "GOOD BYE",
+                                text1: "adios",
                                 text2: ` `,
                                 text3: " ",
                                 avatar: pp,
@@ -623,7 +623,7 @@ global.dfail = (type, m, conn) => {
         private: 'Este comando solo se puede usar en el chat *privado del Bot*',
         admin: 'Este comando es solo para *Admins* del grupo',
         botAdmin: '¡Para usar este comando debo ser *Administrador!*',
-        unreg: 'Regístrese para usar esta función  Escribiendo:\n\n/reg nombre.edad\n\nEjemplo: /registrarme kasuma.14',
+        unreg: 'Regístrese para usar esta función  Escribiendo:\n\n/reg nombre.edad\n\nEjemplo: /registrarme kenn.14',
         restrict: 'Esta característica está *deshabilitada*'
     }[type]
     if (msg) return m.reply(msg)
